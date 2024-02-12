@@ -2,15 +2,69 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<!--   *******  Link To CSS Style Sheet  *******  -->
-	<link rel="stylesheet" type="text/css" href="skillsstyle.css">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-9Ri/JN5uDrlS4RB4peFvZPmUKZpROj+YyzArD29+QUOVWsz/bCZx+g28FNDqVJ61" crossorigin="anonymous"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="skillsstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-9Ri/JN5uDrlS4RB4peFvZPmUKZpROj+YyzArD29+QUOVWsz/bCZx+g28FNDqVJ61" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8fec896baf.js" crossorigin="anonymous"></script>
 	<title>Deepak Gadde portfolio</title>
     <link rel="icon" href="D.png" type="image/x-icon">
     <style>
+		 body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      
+      .topnav a.active {
+        background-color: #333;
+        color: white;
+      }
+      
+      .topnav .icon {
+        display: none;
+      }
+      
+      @media screen and (max-width: 600px) {
+        .topnav a:not(:first-child) {display: none;}
+        .topnav a.icon {
+          float: right;
+          display: block;
+        }
+      }
+      
+      @media screen and (max-width: 600px) {
+        .topnav.responsive {position: relative;}
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
         i {
             border: 3px solid #FB8122; /* Change the border style as needed */
             padding: 10px; /* Add padding around the logos */
@@ -20,27 +74,16 @@
     </style>
 </head>
 <body>
-    <div class="nav">
-        <input type="checkbox" id="nav-check">
-        <div class="nav-header">
-          <div class="nav-title">
-            <img src="D-2-removebg-preview.png" alt="logo" width="65px">
-          </div>
-        </div>
-        <div class="nav-btn">
-          <label for="nav-check">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        
-        <div class="nav-links">
-          <a href="index.html" ><i class="fa-solid fa-house" style="border: none;"></i>Home</a>
-          <a href="skills.html"><i class="fa-solid fa-user"style="border: none;"></i>Skills</a>
-          <a href=""><i class="fa-solid fa-code"style="border: none;"></i>Projects</a>
-        </div>
-      </div>
+    <div class="topnav" id="myTopnav">
+		<a href="#home" class="active"><img src="D-2-removebg-preview.png"alt="logo" width="30px"></a> 
+		<a href="index.html">Home</a>
+		<a href="skills.html">Skills</a>
+		<a href="#about">Projects</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		  <i class="fa fa-bars" style="border: none;"></i>
+		</a>
+	  </div>
+	  
 <div class="container">
 	
 	<!--   *******  Main Heading Starts  *******   -->
@@ -211,6 +254,15 @@
 	</div>
 
 </div>
-
+<script>
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
+</script>
 </body>
 </html>
